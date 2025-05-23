@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm Fraud Detection</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(176, 174, 174, 0.7);
+            padding: 10px 80px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            height: 50px;
+        }
+        .navbar h2 {
+            color: white;
+            margin: 05;
+        }
+        .navbar-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .navbar-buttons button {
+            background: #033566;
+            color: white;
+            padding: px 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 90px;
+        }
+        .navbar-buttons button:hover {
+            background: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Paytm Fraud Detection</h2>
+        <div class="navbar-buttons">
+            <a href="{{ url_for('about') }}"><button>About</button></a>
+            <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+            
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h2>Enter The Required Details</h2>
+        <form action="/predict" method="post">
+            <label>Step: <input type="number" name="step" required></label>
+            <label>Amount: <input type="number" name="amount" required></label>
+            <label>Old Balance Origin: <input type="number" name="oldbalanceOrg" required></label>
+            <label>New Balance Origin: <input type="number" name="newbalanceOrig" required></label>
+            <label>Old Balance Destination: <input type="number" name="oldbalanceDest" required></label>
+            <label>New Balance Destination: <input type="number" name="newbalanceDest" required></label>
+            <label>Transaction Type:
+                <select name="type">
+                    <option value="CASH_OUT">CASH_OUT</option>
+                    <option value="DEBIT">DEBIT</option>
+                    <option value="PAYMENT">PAYMENT</option>
+                    <option value="TRANSFER">TRANSFER</option>
+                </select>
+            </label>
+            <button type="submit">Predict Fraud</button>
+        </form>
+    </div>
+</body>
+</html>

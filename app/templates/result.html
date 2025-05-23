@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* Apply background styling */
+        body {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('../static/image/background.jpg'); /* ✅ Correct Path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust darkness (0.5 = 50% dark) */
+    z-index: -1; /* Keeps it behind other content */
+}
+
+
+.container {
+    width: 50%;
+    background:rgba(175, 176, 198, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.2);
+    font-family: 'Orbitron', sans-serif;
+
+
+    /* Centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+        /* Prediction result */
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff1100;
+        }
+
+        /* Styled button */
+        .back-btn {
+            background: #033566;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 40%;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    .btn {
+    background:  #033566;
+    color: white;
+    padding: 12px 20px;
+    border:10cm;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 40%;
+}
+
+.btn:hover{
+        background: #e68a00;
+        }
+       
+   
+
+        .back-btn:hover {
+            background: #e68a00;
+        }
+
+        .fraud {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .legitimate {
+            color: green;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Transaction Prediction Result</h1>
+    <p class="{% if 'Fraudulent' in prediction_text %}fraud{% else %}legitimate{% endif %}">
+        {{ prediction_text }}
+    </p>
+    <!-- <a href="{{ url_for('index') }}">Go Back</a> -->
+        <a href="index" class="back-btn">HOME</a>
+        <a href="{{ url_for('dashboard') }}" ><button type="submit" class="btn">DASHBOARD</button></a>
+    </div>
+</body>
+</html>

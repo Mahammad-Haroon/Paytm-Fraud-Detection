@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Paytm Fraud Detection</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        .about-container {
+            width: 60%;
+            margin: auto;
+            background: rgba(83, 86, 172, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.2);
+            color: white;
+        }
+        .about-container h2 {
+            margin-bottom: 20px;
+        }
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .about-container a {
+            color: #033566;
+            text-decoration: none;
+        }
+        .about-container a:hover {
+            color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p>
+            Fraud in online transactions is a growing concern in the digital age. 
+            Fraudsters use various techniques to steal money or sensitive information, 
+            causing significant financial losses to individuals and businesses.
+        </p>
+        <p>
+            Our <strong>Paytm Fraud Detection System</strong> leverages machine learning 
+            to identify fraudulent transactions in real-time. The model analyzes 
+            transaction patterns, amounts, and other features to detect anomalies 
+            and flag potential fraud.
+        </p>
+        <p>
+            This system helps businesses and users protect their finances by providing 
+            an additional layer of security. By detecting fraud early, we can prevent 
+            losses and ensure a safer online transaction environment.
+        </p>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Flask
+numpy
+joblib
+scikit-learn
+gunicorn
+pandas
+matplotlib
+seaborn
+xgboost
+
+
+# pip install -r requirements.txt

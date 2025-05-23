@@ -1,0 +1,78 @@
+/* Apply background styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('../static/image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust darkness (0.5 = 50% dark) */
+    z-index: -1; /* Keeps it behind other content */
+}
+
+/* Center the content */
+.container {
+    width: 35%;
+    margin: auto;
+    background: rgba(83, 86, 172, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 2px;
+    box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.2);
+}
+
+/* Form styling */          
+label {
+    display: block;
+    margin: 1px 2 3px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    background: #033566;
+    color: white;
+    padding: 12px 20px;
+    border:10cm;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 40%;
+}
+
+/* Prediction result */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
